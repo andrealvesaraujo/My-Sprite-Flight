@@ -107,3 +107,36 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Add these to your existing .gitignore
+WebGL Builds/
+*.zip
+webgl_sharing
+
+
+## Visual studio
+.vsconfig
+
+### VisualStudioCode ###
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# TextMesh Pro
+Assets/TextMesh Pro/Documentation/
+Assets/TextMesh Pro/Examples/
+Assets/TextMesh Pro/Sprites/
+
+Assets/Aztec-Tech Blocks

@@ -7,6 +7,8 @@ public class Obstacle : MonoBehaviour
     float maxSize = 2.0f;
 
     Rigidbody2D rb;
+    float minSpeed = 50f;
+    float maxSpeed = 150f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,8 +17,9 @@ public class Obstacle : MonoBehaviour
         transform.localScale = new Vector3(randomSize, randomSize, 1);
 
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(Vector2.right * 100);
 
+        float randomSpeed = Random.Range(minSpeed, maxSpeed);        
+        rb.AddForce(Vector2.right * randomSpeed);
     }
 
     // Update is called once per frame

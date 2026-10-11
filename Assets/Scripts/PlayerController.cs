@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(Mouse.current.leftButton.isPressed){
-            Vector3 mousePos = Mouse.current.position.value;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
             Debug.Log("Mouse position: " + mousePos);
         }
     }

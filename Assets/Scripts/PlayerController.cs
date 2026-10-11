@@ -5,8 +5,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public float thrustForce = 1f;
-
     Rigidbody2D rb;
+    public float maxSpeed = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
             // Move player in direction of mouse
             transform.up = direction;
             rb.AddForce(direction * thrustForce);
+
+            if(rb.linearVelocity.magnitude > maxSpeed){
+                rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
+            }
         }
     }
 

@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(Mouse.current.leftButton.isPressed){
+            //Calculate mouse direction
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
-            Debug.Log("Mouse position: " + mousePos);
-
             Vector2 direction = (mousePos - transform.position).normalized;
+            
+            // Move player in direction of mouse
             transform.up = direction;
-
             rb.AddForce(direction * thrustForce);
         }
     }

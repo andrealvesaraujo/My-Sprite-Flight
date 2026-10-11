@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
             Debug.Log("Mouse position: " + mousePos);
 
-            Vector2 direction = mousePos - transform.position;
+            Vector2 direction = (mousePos - transform.position).normalized;
             transform.up = direction;
 
             rb.AddForce(direction * thrustForce);

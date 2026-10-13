@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     public float maxSpeed = 5f;
     public GameObject boosterFlame;
+    public UIDocument uiDocument;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

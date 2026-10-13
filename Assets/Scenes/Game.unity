@@ -1071,6 +1071,7 @@ MonoBehaviour:
   thrustForce: 4
   maxSpeed: 5
   boosterFlame: {fileID: 512480806}
+  uiDocument: {fileID: 2113080939}
 --- !u!1001 &1072058227
 PrefabInstance:
   m_ObjectHideFlags: 0

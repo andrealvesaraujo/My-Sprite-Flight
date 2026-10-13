@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     public GameObject boosterFlame;
     public UIDocument uiDocument;
+    private Label scoreText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreLabel");
     }
 
     // Update is called once per frame
@@ -26,9 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         elapsedTime +=Time.deltaTime;
         score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
-
-        Debug.Log("score: " + score);
-
+        scoreText.text = "Score: " + score;
 
         if(Mouse.current.leftButton.isPressed){
             //Calculate mouse direction

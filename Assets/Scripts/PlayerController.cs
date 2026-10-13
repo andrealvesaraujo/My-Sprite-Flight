@@ -5,6 +5,9 @@ public class PlayerController : MonoBehaviour
 {
 
     private float elapsedTime = 0f;
+    private float score = 0f;
+    public float scoreMultiplier = 10f;
+
     public float thrustForce = 1f;
     Rigidbody2D rb;
     public float maxSpeed = 5f;
@@ -20,7 +23,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         elapsedTime +=Time.deltaTime;
-        Debug.Log("Elapsed time: " + elapsedTime);
+        score = elapsedTime * scoreMultiplier;
+
+        Debug.Log("score: " + score);
 
 
         if(Mouse.current.leftButton.isPressed){

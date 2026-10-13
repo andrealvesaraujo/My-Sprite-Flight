@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public float maxSpeed = 5f;
     public GameObject boosterFlame;
-    
+
     public UIDocument uiDocument;
     private Label scoreText;
 
@@ -29,10 +29,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateScore();
+        MovePlayer();        
+    }
+
+    void UpdateScore(){
         elapsedTime +=Time.deltaTime;
         score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
         scoreText.text = "Score: " + score;
+    }
 
+    void MovePlayer(){
         if(Mouse.current.leftButton.isPressed){
             //Calculate mouse direction
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);

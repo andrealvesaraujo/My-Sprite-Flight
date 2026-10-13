@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
+    private float elapsedTime = 0f;
     public float thrustForce = 1f;
     Rigidbody2D rb;
     public float maxSpeed = 5f;
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        elapsedTime +=Time.deltaTime;
+        Debug.Log("Elapsed time: " + elapsedTime);
+
+
         if(Mouse.current.leftButton.isPressed){
             //Calculate mouse direction
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);

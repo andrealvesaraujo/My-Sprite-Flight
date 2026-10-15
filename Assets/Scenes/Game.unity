@@ -1072,6 +1072,7 @@ MonoBehaviour:
   maxSpeed: 5
   boosterFlame: {fileID: 512480806}
   uiDocument: {fileID: 2113080939}
+  explosionEffect: {fileID: 107055464463788295, guid: 7481cb16406e3ed40b40c56f6293a22b, type: 3}
 --- !u!1001 &1072058227
 PrefabInstance:
   m_ObjectHideFlags: 0

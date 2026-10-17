@@ -10,6 +10,8 @@ public class Obstacle : MonoBehaviour
     public float maxSpinSpeed = 10f;
 
     Rigidbody2D rb;
+
+    public GameObject bouceEffect;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,4 +35,13 @@ public class Obstacle : MonoBehaviour
     {
 
     }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        Vector2 contactPoint = collision.GetContact(0).point;
+        GameObject newBouceEffect = Instantiate(bouceEffect, contactPoint, Quaternion.identity);
+
+        // Destroy the effect after 1 second
+        Destroy(newBouceEffect, 1f);
+    }
+
 }

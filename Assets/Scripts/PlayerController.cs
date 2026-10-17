@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreLabel");
         restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
         restartButton.style.display = DisplayStyle.None;
+        restartButton.clicked += ReloadScene;
     }
 
     // Update is called once per frame
@@ -71,5 +73,9 @@ public class PlayerController : MonoBehaviour
         Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
         restartButton.style.display = DisplayStyle.Flex;
+    }
+
+    void ReloadScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

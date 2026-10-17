@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private float elapsedTime = 0f;
     private float score = 0f;
+    private float highScore = 0f;
 
     public float scoreMultiplier = 10f;
     public float thrustForce = 1f;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public UIDocument uiDocument;
     private Label scoreText;
+    private Label highScoreText;
     private Button restartButton;
 
     public GameObject explosionEffect;
@@ -29,7 +30,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreLabel");
+        highScoreText = uiDocument.rootVisualElement.Q<Label>("HighScoreLabel");
         restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
+
+        highScore = PlayerPrefs.GetFloat("HighScore", 0f);
+
+        highScoreText.style.display = DisplayStyle.None;
+        
         restartButton.style.display = DisplayStyle.None;
         restartButton.clicked += ReloadScene;
     }
@@ -73,6 +80,13 @@ public class PlayerController : MonoBehaviour
         Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
         restartButton.style.display = DisplayStyle.Flex;
+        if(score > highScore){
+            highScore = score;
+            PlayerPrefs.SetFloat("HighScore", score);
+            PlayerPrefs.Save();
+        }
+        highScoreText.text = "High Score: " + highScore;
+        highScoreText.style.display = DisplayStyle.Flex;
     }
 
     void ReloadScene(){

@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject explosionEffect;
 
+    public GameObject borderParent;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+        borderParent.SetActive(false);
         restartButton.style.display = DisplayStyle.Flex;
         if(score > highScore){
             highScore = score;

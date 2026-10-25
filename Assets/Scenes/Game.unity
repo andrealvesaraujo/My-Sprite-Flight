@@ -1301,6 +1301,42 @@ MonoBehaviour:
   uiDocument: {fileID: 2113080939}
   explosionEffect: {fileID: 107055464463788295, guid: 7481cb16406e3ed40b40c56f6293a22b, type: 3}
   borderParent: {fileID: 1676076335}
+  moveForward:
+    m_Name: Move Forward
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: afa9d6a9-f6d9-4d2a-ba50-a833e5f4835a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6ebf5c92-73b0-4012-a549-ed350864a605
+      m_Path: <Pointer>/press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Forward
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
+  lookPosition:
+    m_Name: Look Position
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e5e8bef3-e0d3-4421-a6f1-bf05265af60f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b1eff590-6cdb-477f-9faf-349263bb0210
+      m_Path: <Pointer>/position
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Look Position
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
 --- !u!1 &1030372529
 GameObject:
   m_ObjectHideFlags: 0
